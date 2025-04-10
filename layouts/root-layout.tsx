@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import AuthLayout from "@layouts/auth-layer";
 import DashboardLayout from "@layouts/dashboard-layout";
 
-// Define public routes that don't require authentication
 const publicRoutes = ["/login", "/signup"];
 
 export default function RootLayout({
@@ -59,13 +58,11 @@ export default function RootLayout({
     };
   }, [pathname, router, supabase]);
 
-  // Show loading state while checking auth
   if (isAuthenticated === null) {
     console.log("Rendering loading state");
     return <div>Loading...</div>;
   }
 
-  // Return appropriate layout based on auth state and route
   if (!isAuthenticated && publicRoutes.includes(pathname)) {
     console.log("Rendering AuthLayout");
     return <AuthLayout>{children}</AuthLayout>;

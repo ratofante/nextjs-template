@@ -14,6 +14,9 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 
+
+
+
 export default function DashboardLayout({
   children,
 }: {
@@ -43,6 +46,7 @@ export default function DashboardLayout({
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
+            {/* <NavUser user={data.user} /> */}
           </div>
         </header>
         <main className="min-h-screen">{children}</main>
